@@ -9,7 +9,8 @@ public class CarsConverter {
     private static final String SPLIT = ",";
 
     public static List<String> parse(String names){
-        return Arrays.stream(names.split(SPLIT))
+        String trimmedNames = names.trim();
+        return Arrays.stream(trimmedNames.split(SPLIT))
                 .collect(Collectors.toList());
     }
 }
