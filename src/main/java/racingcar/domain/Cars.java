@@ -1,5 +1,7 @@
 package racingcar.domain;
 
+import racingcar.utils.RandomNumberGenerator;
+
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -11,6 +13,12 @@ public class Cars {
 
     public Cars(List<Car> cars) {
         this.cars = cars;
+    }
+
+    public void moveCars(){
+        for(Car car : cars){
+            car.move(RandomNumberGenerator.createNumber());
+        }
     }
 
     public List<String> getWinners(){
