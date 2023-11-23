@@ -20,11 +20,15 @@ public class Cars {
         for(Car car : cars){
             car.move(RandomNumberGenerator.createNumber());
         }
-        Map<String, Integer> movedResult = cars.stream()
-                .collect(Collectors.toMap(Car::getName, Car::getPosition));
-        return new Result(movedResult);
+        return new Result(getMovedResult());
     }
 
+    private Map<String, Integer> getMovedResult() {
+        Map<String, Integer> movedResult = cars.stream()
+                .collect(Collectors.toMap(Car::getName, Car::getPosition, (oldValue, newValue) -> oldValue
+                        ,LinkedHashMap::new));
+        return movedResult;
+    }
 
 
     public List<String> getWinners(){
