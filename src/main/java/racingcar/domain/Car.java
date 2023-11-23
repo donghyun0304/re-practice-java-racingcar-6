@@ -13,17 +13,17 @@ public class Car implements Comparable<Car>{
         this.position = INIT_POSITION_NUMBER;
     }
 
-    public static Car from(String name){
+    public static Car from(final String name){
         return new Car(name);
     }
 
-    public void move(int randomNumber){
+    public void move(final int randomNumber){
         if(randomNumber >= MIN_NUMBER_FOR_MOVE){
             position++;
         }
     }
 
-    public boolean isSamePosition(Car car){
+    public boolean isSamePosition(final Car car){
         int result = compareTo(car);
         if(SAME_POSITION_NUMBER == result){
             return true;

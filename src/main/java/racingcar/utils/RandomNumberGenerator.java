@@ -14,7 +14,7 @@ public class RandomNumberGenerator {
         return randomNumber;
     }
 
-    private static void validateNumberRange(int randomNumber){
+    private static void validateNumberRange(final int randomNumber){
         if(!(randomNumber >= MIN_NUMBER && randomNumber <= MAX_NUMBER)){
             throw new IllegalArgumentException("[ERROR] 0~9 사이의 숫자가 아닙니다.");
         }

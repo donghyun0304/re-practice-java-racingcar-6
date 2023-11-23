@@ -13,7 +13,7 @@ public class CarValidator {
     private static final int MIN_CAR_AMOUNT = 2;
     private static final int MAX_CAR_NAME_LENGTH = 5;
 
-    public static void validateNames(String input) {
+    public static void validateNames(final String input) {
         if (isNullOrEmptyOrWhitespace(input)
                 || isSingleCar(input)
                 || isOverLength(input)
@@ -23,21 +23,21 @@ public class CarValidator {
         }
     }
 
-    private static boolean isNullOrEmptyOrWhitespace(String input) {
+    private static boolean isNullOrEmptyOrWhitespace(final String input) {
         return input == null || input.trim().isEmpty();
     }
 
-    private static boolean isSingleCar(String input) {
+    private static boolean isSingleCar(final String input) {
         String[] names = input.split(CarConstant.NAME_SEPARATOR);
         return names.length < MIN_CAR_AMOUNT;
     }
 
-    private static boolean isOverLength(String input) {
+    private static boolean isOverLength(final String input) {
         return Arrays.stream(input.split(CarConstant.NAME_SEPARATOR))
                 .anyMatch(name -> name.length() > MAX_CAR_NAME_LENGTH);
     }
 
-    private static boolean hasDuplicateNames(String input) {
+    private static boolean hasDuplicateNames(final String input) {
         List<String> names = Arrays.stream(input.split(CarConstant.NAME_SEPARATOR))
                 .collect(Collectors.toList());
         Set<String> nonDuplicateNames = new HashSet<>(names);

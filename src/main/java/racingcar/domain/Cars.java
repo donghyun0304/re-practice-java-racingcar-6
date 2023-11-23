@@ -38,13 +38,13 @@ public class Cars {
         return new WinningCars(winningCars).getNames();
     }
 
-    private List<Car> sortAscending(List<Car> cars){
+    private List<Car> sortAscending(final List<Car> cars){
         return cars.stream()
                 .sorted()
                 .collect(Collectors.toList());
     }
 
-    private List<Car> findCarsAtWinningPosition(List<Car> cars, Car maxiestMovedCar){
+    private List<Car> findCarsAtWinningPosition(final List<Car> cars, final Car maxiestMovedCar){
        return cars.stream()
                 .filter(car -> maxiestMovedCar.isSamePosition(car))
                 .collect(Collectors.toList());

@@ -1,14 +1,14 @@
-package racingcar.utils.validation;
+package racingcar.validation;
 
 public class RoundValidator {
 
-    public static void validateRound(String input){
+    public static void validateRound(final String input){
         if(!isNumeric(input) || !isNaturalNumber(input)){
             throw new IllegalArgumentException("[ERROR] 0이상의 자연수를 입력 해 주세요.");
         }
     }
 
-    private static boolean isNumeric(String input){
+    private static boolean isNumeric(final String input){
         try {
             Integer.parseInt(input);
             return true;
@@ -17,7 +17,7 @@ public class RoundValidator {
         }
     }
 
-    private static boolean isNaturalNumber(String input){
+    private static boolean isNaturalNumber(final String input){
         if(Integer.parseInt(input) > 0){
             return true;
         }
