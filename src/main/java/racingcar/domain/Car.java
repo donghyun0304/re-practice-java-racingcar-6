@@ -35,6 +35,10 @@ public class Car implements Comparable<Car>{
         return name;
     }
 
+    public int getPosition() {
+        return position;
+    }
+
     @Override
     public String toString() {
         return "Car{" +
