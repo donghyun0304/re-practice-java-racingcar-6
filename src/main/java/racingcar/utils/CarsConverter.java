@@ -8,11 +8,11 @@ import java.util.stream.Collectors;
 
 public class CarsConverter {
 
-    private static final String SPLIT = ",";
+    private static final String NAME_SEPARATOR = ",";
 
     public static List<String> parse(String names) {
         String trimmedNames = names.trim();
-        return Arrays.stream(trimmedNames.split(SPLIT))
+        return Arrays.stream(trimmedNames.split(NAME_SEPARATOR))
                 .collect(Collectors.toList());
     }
 
