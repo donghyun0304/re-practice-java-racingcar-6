@@ -4,6 +4,7 @@ public class Car implements Comparable<Car>{
 
     private static final int INIT_POSITION_NUMBER = 0;
     private static final int MIN_NUMBER_FOR_MOVE = 4;
+    private static final int SAME_POSITION_NUMBER = 0;
     private String name;
     private int position;
 
@@ -20,6 +21,14 @@ public class Car implements Comparable<Car>{
         if(randomNumber >= MIN_NUMBER_FOR_MOVE){
             position++;
         }
+    }
+
+    public boolean isSamePosition(Car car){
+        int result = compareTo(car);
+        if(SAME_POSITION_NUMBER == result){
+            return true;
+        }
+        return false;
     }
 
     @Override
