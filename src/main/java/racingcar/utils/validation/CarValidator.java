@@ -9,11 +9,11 @@ public class CarValidator {
 
     public static final void validatorCarAmount(String input){
         List<String> names = Arrays.asList(input.split(","));
-        if(names.size() >= MIN_CAR_AMOUNT){
+        if(names.size() < MIN_CAR_AMOUNT){
             throw new IllegalArgumentException("[ERROR] 최소 2대의 차량이 존재해야 합니다.");
         }
     }
-    
+
 
 
 }
