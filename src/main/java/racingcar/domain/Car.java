@@ -31,6 +31,10 @@ public class Car implements Comparable<Car>{
         return false;
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return "Car{" +
@@ -43,4 +47,6 @@ public class Car implements Comparable<Car>{
     public int compareTo(Car o) {
         return this.position - o.position;
     }
+
+
 }
