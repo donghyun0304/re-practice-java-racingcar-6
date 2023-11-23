@@ -1,4 +1,6 @@
-package racingcar.utils.validation;
+package racingcar.validation;
+
+import racingcar.constant.CarConstant;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -26,17 +28,17 @@ public class CarValidator {
     }
 
     private static boolean isSingleCar(String input) {
-        String[] names = input.split(",");
+        String[] names = input.split(CarConstant.NAME_SEPARATOR);
         return names.length < MIN_CAR_AMOUNT;
     }
 
     private static boolean isOverLength(String input) {
-        return Arrays.stream(input.split(","))
+        return Arrays.stream(input.split(CarConstant.NAME_SEPARATOR))
                 .anyMatch(name -> name.length() > MAX_CAR_NAME_LENGTH);
     }
 
     private static boolean hasDuplicateNames(String input) {
-        List<String> names = Arrays.stream(input.split(","))
+        List<String> names = Arrays.stream(input.split(CarConstant.NAME_SEPARATOR))
                 .collect(Collectors.toList());
         Set<String> nonDuplicateNames = new HashSet<>(names);
         if (names.size() != nonDuplicateNames.size()) {
