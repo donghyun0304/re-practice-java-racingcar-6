@@ -35,19 +35,19 @@ public class RacingCarGame {
         return inputView.inputRoundAmount();
     }
 
-    private Cars createCars(List<String> carNames) {
+    private Cars createCars(final List<String> carNames) {
         List<Car> cars = CarsConverter.createCars(carNames);
         return new Cars(cars);
     }
 
-    private void performRaces(Cars carGroup, int roundAmount) {
+    private void performRaces(final Cars carGroup, final int roundAmount) {
         for (int i = 0; i < roundAmount; i++) {
             Result roundResult = carGroup.moveCars();
             outputView.printRoundResult(roundResult);
         }
     }
 
-    private void announceWinners(Cars carGroup) {
+    private void announceWinners(final Cars carGroup) {
         List<String> winners = carGroup.getWinners();
         outputView.printWinners(winners);
     }
