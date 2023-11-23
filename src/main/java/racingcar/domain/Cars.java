@@ -5,6 +5,7 @@ import racingcar.utils.RandomNumberGenerator;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Cars {
@@ -15,11 +16,16 @@ public class Cars {
         this.cars = cars;
     }
 
-    public void moveCars(){
+    public Result moveCars(){
         for(Car car : cars){
             car.move(RandomNumberGenerator.createNumber());
         }
+        Map<String, Integer> movedResult = cars.stream()
+                .collect(Collectors.toMap(Car::getName, Car::getPosition));
+        return new Result(movedResult);
     }
+
+
 
     public List<String> getWinners(){
         List<Car> sortedCars = sortAscending(cars);
