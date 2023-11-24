@@ -2,18 +2,15 @@ package racingcar.domain;
 
 import racingcar.utils.RandomNumberGenerator;
 
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Cars {
 
     private final List<Car> cars;
 
-    public Cars(List<Car> cars) {
-        this.cars = cars;
+    public Cars(final List<Car> cars) {
+        this.cars = new ArrayList<>(cars);
     }
 
     public Result moveCars(){
