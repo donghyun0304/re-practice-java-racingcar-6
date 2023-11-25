@@ -16,5 +16,8 @@ public class CarName {
             throw new IllegalArgumentException(ErrorMessage.CAR_NAME_LENGTH_IS_INVALID);
         }
     }
-    
+
+    public String getName() {
+        return name;
+    }
 }
