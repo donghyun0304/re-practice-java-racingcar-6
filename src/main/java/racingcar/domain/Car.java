@@ -5,11 +5,11 @@ public class Car implements Comparable<Car>{
     private static final int INIT_POSITION_NUMBER = 0;
     private static final int MIN_NUMBER_FOR_MOVE = 4;
     private static final int SAME_POSITION_NUMBER = 0;
-    private String name;
+    private CarName name;
     private int position;
 
     private Car(String name) {
-        this.name = name;
+        this.name = new CarName(name);
         this.position = INIT_POSITION_NUMBER;
     }
 
@@ -32,7 +32,7 @@ public class Car implements Comparable<Car>{
     }
 
     public String getName() {
-        return name;
+        return name.getName();
     }
 
     public int getPosition() {
@@ -42,7 +42,7 @@ public class Car implements Comparable<Car>{
     @Override
     public String toString() {
         return "Car{" +
-                "name='" + name + '\'' +
+                "name='" + name.getName() + '\'' +
                 ", position=" + position +
                 '}';
     }
