@@ -11,7 +11,6 @@ import java.util.stream.Collectors;
 public class CarValidator {
 
     private static final int MIN_CAR_AMOUNT = 2;
-    private static final int MAX_CAR_NAME_LENGTH = 5;
 
     public static void validateNames(final String input) {
         if (isNullOrEmptyOrWhitespace(input)
@@ -34,7 +33,7 @@ public class CarValidator {
 
     private static boolean isOverLength(final String input) {
         return Arrays.stream(input.split(CarConstant.NAME_SEPARATOR))
-                .anyMatch(name -> name.length() > MAX_CAR_NAME_LENGTH);
+                .anyMatch(name -> name.length() > CarConstant.MAX_CAR_NAME_LENGTH);
     }
 
     private static boolean hasDuplicateNames(final String input) {
